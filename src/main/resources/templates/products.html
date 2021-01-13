@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+    <head>
+        <title>Springboot Practice</title>
+    </head>
+
+    <body>
+        <h2>Practice - Products list</h2>
+
+        <h5>
+            Products (<span th:text="${count}"></span>)
+        </h5>
+
+        <table th:action="@{/products}">
+            <tr>
+                <th id="id">ID</th>
+                <th id="name">Name</th>
+                <th id="price">Price</th>
+                <th id="createdDate">Created Date</th>
+                <th id="stock">Stock</th>
+            </tr>
+
+            <!-- th:each sweeps through all the content; th:text refers to a property of the object -->
+            <tr th:each="product: ${products}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.createdDate}"></td>
+                <td th:text="${product.stock}"></td>
+            </tr>
+        </table>
+    </body>
+</html>

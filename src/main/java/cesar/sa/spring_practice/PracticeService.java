@@ -19,5 +19,9 @@ public class PracticeService {
     public List<Products> getAll() {
         return (List<Products>) repo.findAll();
     }
+
+    public Long count() {
+        return repo.count();
+    }
     
 }

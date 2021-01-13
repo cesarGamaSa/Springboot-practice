@@ -25,6 +25,7 @@ public class PracticeController {
     @RequestMapping("/products")
     public String products(Model model) {
         model.addAttribute("products", service.getAll());
+        model.addAttribute("count", service.count());
         return "products";
     }
 
